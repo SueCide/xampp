@@ -1,16 +1,15 @@
+import { logout } from "./functions.js";
 
-
-const button    = document.getElementById("back_login_button");
+const button    = document.getElementById("logout");
 const textvalue = document.createElement("div")
 
-button.addEventListener("click",() => {
-    destroy_session()
-    window.location.href = "login.html"
+button.addEventListener("click",() =>{
 
+    logout().then(()=>{
+
+        window.location.href="login.html";
+
+    });
 });
 
-function destroy_session(){
 
- 
-
-}

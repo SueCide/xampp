@@ -61,6 +61,7 @@ export async function check_data(name,pass) {
     const res = await fetch("../api/login_check.php",{
 
         method: "POST",
+        credentials:"same-origin",
         headers:{
 
             "Content-Type": "application/json"
@@ -73,5 +74,19 @@ export async function check_data(name,pass) {
 
     const data_rec = await res.json();
     return data_rec
+
+}
+
+export async function logout() {
+
+   const res = await fetch("../api/delete_session.php",{
+
+        method: "POST",
+        credentials:"same-origin"
+
+    });
+    const resp = await res.json();
+    console.log(resp)
+    return undefined;
 
 }
